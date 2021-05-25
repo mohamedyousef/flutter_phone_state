@@ -1,18 +1,20 @@
+import 'package:collection/collection.dart' show IterableExtension;
+
 Duration sinceNow(DateTime self) => -(self.difference(DateTime.now()));
 
-X find<X>(List<X> self, [bool filter(X input)]) {
-  return self?.firstWhere(filter, orElse: () => null);
+X? find<X>(List<X> self, [bool filter(X input)?]) {
+  return self?.firstWhereOrNull(filter!);
 }
 
-X lastOrNull<X>(List<X> self, [bool filter(X input)]) {
-  return self?.lastWhere(filter, orElse: () => null);
+X? lastOrNull<X>(List<X> self, [bool filter(X input)?]) {
+  return self?.lastWhereOrNull(filter!);
 }
 
-X firstOrNull<X>(List<X> self, [bool filter(X input)]) {
-  return self?.firstWhere(filter, orElse: () => null);
+X? firstOrNull<X>(List<X> self, [bool filter(X input)?]) {
+  return self?.firstWhereOrNull(filter!);
 }
 
-String truncate(String self, int length) {
+String? truncate(String? self, int length) {
   if (self == null) return self;
   if (self.length <= length) {
     return self;
