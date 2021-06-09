@@ -3,15 +3,15 @@ import 'package:collection/collection.dart' show IterableExtension;
 Duration sinceNow(DateTime self) => -(self.difference(DateTime.now()));
 
 X? find<X>(List<X> self, [bool filter(X input)?]) {
-  return self?.firstWhereOrNull(filter!);
+  return self.firstWhereOrNull(filter!);
 }
 
 X? lastOrNull<X>(List<X> self, [bool filter(X input)?]) {
-  return self?.lastWhereOrNull(filter!);
+  return self.lastWhereOrNull(filter!);
 }
 
 X? firstOrNull<X>(List<X> self, [bool filter(X input)?]) {
-  return self?.firstWhereOrNull(filter!);
+  return self.firstWhereOrNull(filter!);
 }
 
 String? truncate(String? self, int length) {
@@ -24,7 +24,7 @@ String? truncate(String? self, int length) {
 }
 
 bool isNullOrEmpty(String self) {
-  return self?.isNotEmpty != true;
+  return self.isNotEmpty != true;
 }
 
 bool isNotNullOrEmpty(String self) => isNullOrEmpty(self);
